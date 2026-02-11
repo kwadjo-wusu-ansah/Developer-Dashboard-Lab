@@ -67,7 +67,7 @@ function createResourceCardMarkup(resource: DevResource): string {
   return `
     <li class="resource-card" data-resource-id="${escapeHtml(resource.id)}">
       <div class="resource-card-header">
-        <h3>${safeName}</h3>
+        <h3 class="resource-card-title">${safeName}</h3>
         <p class="resource-category-pill">${safeCategory}</p>
       </div>
       <p class="resource-url">${escapeHtml(resource.link)}</p>
@@ -82,8 +82,8 @@ function createResourceCardMarkup(resource: DevResource): string {
 function createEmptyStateMarkup(): string {
   return `
     <li class="resource-empty-state">
-      <h3>No resources found</h3>
-      <p>Try a different category or clear the search input.</p>
+      <h3 class="resource-empty-title">No resources found</h3>
+      <p class="resource-empty-copy">Try a different category or clear the search input.</p>
     </li>
   `;
 }
