@@ -1,0 +1,16 @@
+:root {
+  --color-night-900: #343b5a;
+  --color-night-800: #2a314a;
+  --color-slate-500: #acbac4;
+  --color-sand-300: #d3cba7;
+  --color-sand-200: #d8d8c4;
+  --color-mist-100: #f1efdf;
+  --color-ink-950: #111628;
+  --color-ink-900: #1a2034;
+  --color-line: color-mix(in srgb, var(--color-slate-500) 22%, transparent);
+  --shadow-soft: 0 20px 55px rgba(10, 15, 27, 0.35);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --font-ui: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+}
