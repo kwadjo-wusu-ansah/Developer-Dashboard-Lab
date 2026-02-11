@@ -30,13 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1 # Using a specific minor version
 
       - name: Set up Node
-        uses: actions/setup-node@4
+        uses: actions/setup-node@v4.0.2 # Using a specific minor version
         with:
           node-version: 20
-          cache: "npm"
+          cache: 'npm'
 
       - name: Build
         run: npm run build
