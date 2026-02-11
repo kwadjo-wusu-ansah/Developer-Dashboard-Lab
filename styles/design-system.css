@@ -69,7 +69,7 @@ body {
 .dashboard-header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0.85rem;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
@@ -96,17 +96,6 @@ body {
   margin: 0.35rem 0 0;
   font-size: 0.9rem;
   color: var(--color-sand-200);
-}
-
-.header-action {
-  border: 0;
-  border-radius: 11px;
-  background: linear-gradient(135deg, var(--color-sand-300), var(--color-sand-200));
-  color: var(--color-ink-950);
-  font-weight: 700;
-  padding: 0.65rem 0.9rem;
-  cursor: pointer;
-  white-space: nowrap;
 }
 
 .controls-panel {
@@ -356,10 +345,6 @@ body {
 
   .dashboard-header {
     flex-direction: column;
-  }
-
-  .header-action {
-    width: 100%;
   }
 
   .resource-placeholder-grid {
