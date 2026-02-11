@@ -1,0 +1,13 @@
+import type {ResourceCategories, Resources} from "./types";
+
+export function findByProperty<T>(arr: T[], key: keyof T, value: T[keyof T]): T | undefined {
+
+  return arr.find(item => item[key] === value);
+
+}
+
+export function filterMoodEntries(arr: Resources, category : ResourceCategories): Resources {
+
+    return arr.filter(entry => entry.category === category);
+
+ }

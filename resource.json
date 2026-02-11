@@ -1,0 +1,124 @@
+[
+  {
+    "name": "MDN Web Docs",
+    "category": "Documentation",
+    "link": "https://developer.mozilla.org"
+  },
+  {
+    "name": "TypeScript Handbook",
+    "category": "Language",
+    "link": "https://www.typescriptlang.org/docs/"
+  },
+  {
+    "name": "Vite Guide",
+    "category": "Build Tool",
+    "link": "https://vitejs.dev"
+  },
+  {
+    "name": "React Docs",
+    "category": "Documentation",
+    "link": "https://react.dev"
+  },
+  { "name": "Figma", "category": "Design", "link": "https://www.figma.com" },
+  { "name": "ESLint", "category": "Build Tool", "link": "https://eslint.org" },
+  {
+    "name": "JavaScript.info",
+    "category": "Language",
+    "link": "https://javascript.info"
+  },
+  {
+    "name": "Tailwind CSS Docs",
+    "category": "Documentation",
+    "link": "https://tailwindcss.com/docs"
+  },
+  { "name": "Caniuse", "category": "Tool", "link": "https://caniuse.com" },
+  {
+    "name": "Google Fonts",
+    "category": "Design",
+    "link": "https://fonts.google.com"
+  },
+  {
+    "name": "PostCSS",
+    "category": "Build Tool",
+    "link": "https://postcss.org"
+  },
+  {
+    "name": "Next.js Repo",
+    "category": "Documentation",
+    "link": "https://nextjs.org"
+  },
+  { "name": "Dribbble", "category": "Design", "link": "https://dribbble.com" },
+  {
+    "name": "Prettier",
+    "category": "Build Tool",
+    "link": "https://prettier.io"
+  },
+  {
+    "name": "Frontend Masters",
+    "category": "Language",
+    "link": "https://frontendmasters.com"
+  },
+  {
+    "name": "CSS Tricks",
+    "category": "Documentation",
+    "link": "https://css-tricks.com"
+  },
+  {
+    "name": "Adobe Color",
+    "category": "Design",
+    "link": "https://color.adobe.com"
+  },
+  {
+    "name": "Webpack",
+    "category": "Build Tool",
+    "link": "https://webpack.js.org"
+  },
+  {
+    "name": "Dart Sass",
+    "category": "Language",
+    "link": "https://sass-lang.com"
+  },
+  {
+    "name": "Smashing Magazine",
+    "category": "Documentation",
+    "link": "https://www.smashingmagazine.com"
+  },
+  { "name": "Coolors", "category": "Design", "link": "https://coolors.co" },
+  { "name": "Vitest", "category": "Build Tool", "link": "https://vitest.dev" },
+  { "name": "Web.dev", "category": "Documentation", "link": "https://web.dev" },
+  {
+    "name": "Behance",
+    "category": "Design",
+    "link": "https://www.behance.net"
+  },
+  {
+    "name": "Node.js Docs",
+    "category": "Language",
+    "link": "https://nodejs.org"
+  },
+  {
+    "name": "Bundlephobia",
+    "category": "Build Tool",
+    "link": "https://bundlephobia.com"
+  },
+  {
+    "name": "Awwwards",
+    "category": "Design",
+    "link": "https://www.awwwards.com"
+  },
+  {
+    "name": "Patterns.dev",
+    "category": "Documentation",
+    "link": "https://www.patterns.dev"
+  },
+  {
+    "name": "npm Registry",
+    "category": "Build Tool",
+    "link": "https://www.npmjs.com"
+  },
+  {
+    "name": "JSON Placeholder",
+    "category": "Tool",
+    "link": "https://jsonplaceholder.typicode.com"
+  }
+]
