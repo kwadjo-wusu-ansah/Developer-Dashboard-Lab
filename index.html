@@ -12,9 +12,13 @@
     <title>Developer Dashboard</title>
   </head>
   <body>
+
     <div id="app" class="dashboard-frame">
+
       <main class="dashboard-layout" aria-labelledby="dashboard-heading">
+
         <section class="dashboard-content">
+
           <header class="dashboard-header">
             <div>
               <p class="header-kicker">Resource Hub</p>
@@ -26,6 +30,7 @@
           </header>
 
           <section class="controls-panel" aria-label="Search and filter controls">
+
             <form role="search" aria-label="Search resources">
               <label for="resource-search">Search by name or category</label>
               <input
@@ -49,14 +54,18 @@
               <button type="button" data-category="Language">Language</button>
               <button type="button" data-category="Tool">Tool</button>
             </nav>
+
           </section>
 
           <section class="dashboard-grid" aria-label="Main dashboard placeholders">
+
             <section class="resources-panel" aria-labelledby="resource-list-heading">
+
               <header class="panel-header">
                 <h2 id="resource-list-heading">Resources</h2>
                 <p id="results-meta">Resource cards will render in this grid.</p>
               </header>
+
               <ul id="resource-grid" aria-live="polite" class="resource-placeholder-grid">
                 <li class="resource-placeholder-card">
                   <h3>Resource Card Placeholder</h3>
@@ -75,6 +84,7 @@
                   <p>Empty-state and search-state will be managed in TS.</p>
                 </li>
               </ul>
+
             </section>
           </section>
         </section>

@@ -1,25 +1,19 @@
 import seedResources from "../resource.json";
+import {
+  filterResources,
+  isResourceCategory,
+  normalizeResourceList,
+  normalizeSeedResource,
+} from "./resourceProcessor";
 import { loadResources, saveResources } from "./storage";
 import {
-  ResourceCategories,
   type CategoryFilter,
-  type DevResource,
+  type DashboardState,
   type Resources,
+  type SeedResourceEntry,
 } from "./types";
 import { renderDashboard } from "./ui";
-import { generateId, KEYS } from "./utils";
-
-interface DashboardState {
-  resources: Resources;
-  activeCategory: CategoryFilter;
-  searchTerm: string;
-}
-
-interface SeedResourceEntry {
-  name: string;
-  category: string;
-  link: string;
-}
+import { KEYS } from "./utils";
 
 const allCategoryFilter: CategoryFilter = "All";
 const searchInputElementId = "resource-search";
@@ -29,58 +23,6 @@ const dashboardState: DashboardState = {
   activeCategory: allCategoryFilter,
   searchTerm: "",
 };
-
-// Lists supported category values for runtime category validation.
-function getSupportedCategories(): ResourceCategories[] {
-  return Object.values(ResourceCategories);
-}
-
-// Checks if a category string is one of the supported resource categories.
-function isResourceCategory(category: string): category is ResourceCategories {
-  return getSupportedCategories().includes(category as ResourceCategories);
-}
-
-// Validates and normalizes one seed resource before persisting it.
-function normalizeSeedResource(entry: SeedResourceEntry): DevResource | null {
-  const normalizedName = entry.name.trim();
-  const normalizedLink = entry.link.trim();
-
-  if (!normalizedName || !normalizedLink || !isResourceCategory(entry.category)) {
-    return null;
-  }
-
-  return {
-    id: generateId(),
-    name: normalizedName,
-    category: entry.category,
-    link: normalizedLink,
-  };
-}
-
-// Validates and normalizes one stored resource entry for safe UI rendering.
-function normalizeStoredResource(entry: Partial<DevResource>): DevResource | null {
-  const normalizedName = entry.name?.trim() ?? "";
-  const normalizedLink = entry.link?.trim() ?? "";
-  const normalizedCategory = entry.category ?? "";
-
-  if (!normalizedName || !normalizedLink || !isResourceCategory(normalizedCategory)) {
-    return null;
-  }
-
-  return {
-    id: entry.id?.trim() || generateId(),
-    name: normalizedName,
-    category: normalizedCategory,
-    link: normalizedLink,
-  };
-}
-
-// Converts an unknown list into validated resource entries only.
-function normalizeResourceList(entries: unknown[]): Resources {
-  return entries
-    .map((entry) => normalizeStoredResource(entry as Partial<DevResource>))
-    .filter((entry): entry is DevResource => entry !== null);
-}
 
 // Loads persisted resources and seeds the storage from JSON when needed.
 function initializeResources(): Resources {
@@ -96,7 +38,7 @@ function initializeResources(): Resources {
 
   const normalizedSeedResources = (seedResources as SeedResourceEntry[])
     .map((entry) => normalizeSeedResource(entry))
-    .filter((entry): entry is DevResource => entry !== null);
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
 
   saveResources(KEYS.RESOURCES_STORAGE_KEY, normalizedSeedResources);
   localStorage.setItem(KEYS.FIRST_SEED_KEY, "true");
@@ -104,31 +46,13 @@ function initializeResources(): Resources {
   return normalizedSeedResources;
 }
 
-// Filters resources by selected category and current search text.
-function getFilteredResources(state: DashboardState): Resources {
-  const normalizedSearchTerm = state.searchTerm.trim().toLowerCase();
-
-  return state.resources.filter((resource) => {
-    const categoryMatches =
-      state.activeCategory === allCategoryFilter ||
-      resource.category === state.activeCategory;
-
-    if (!categoryMatches) {
-      return false;
-    }
-
-    if (!normalizedSearchTerm) {
-      return true;
-    }
-
-    const searchableText = `${resource.name} ${resource.category}`.toLowerCase();
-    return searchableText.includes(normalizedSearchTerm);
-  });
-}
-
 // Renders the dashboard based on the latest application state.
 function renderDashboardState(): void {
-  const filteredResources = getFilteredResources(dashboardState);
+  const filteredResources = filterResources(
+    dashboardState.resources,
+    dashboardState.activeCategory,
+    dashboardState.searchTerm,
+  );
   renderDashboard({
     filteredResources,
     totalResources: dashboardState.resources.length,

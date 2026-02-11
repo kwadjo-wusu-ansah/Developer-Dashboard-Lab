@@ -13,9 +13,15 @@ export interface DevResource {
   link: string;
 }
 
-export interface PartialDevResource {
+export interface DashboardState {
+  resources: Resources;
+  activeCategory: CategoryFilter;
+  searchTerm: string;
+}
+
+export interface SeedResourceEntry {
   name: string;
-  category: ResourceCategories;
+  category: string;
   link: string;
 }
 

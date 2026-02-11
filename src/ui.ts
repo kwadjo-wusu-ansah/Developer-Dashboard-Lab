@@ -97,15 +97,18 @@ function createResourceGridMarkup(resources: Resources): string {
   return resources.map((resource) => createResourceCardMarkup(resource)).join("");
 }
 
-// Builds human-readable metadata text for the current filter state.
-function createResultsMetaText(state: DashboardRenderState): string {
+// Builds metadata markup with emphasized values for the current filter state.
+function createResultsMetaMarkup(state: DashboardRenderState): string {
   const normalizedSearch = state.searchTerm.trim();
-  const categoryLabel = `Category: ${state.activeCategory}`;
-  const searchLabel = normalizedSearch
-    ? `Search: "${normalizedSearch}"`
-    : "Search: none";
+  const safeCategory = escapeHtml(state.activeCategory);
+  const searchValue = normalizedSearch ? escapeHtml(normalizedSearch) : "None";
 
-  return `${state.filteredResources.length} of ${state.totalResources} resources. ${categoryLabel}. ${searchLabel}.`;
+  return `
+    <span class="results-emphasis">${state.filteredResources.length}</span> of
+    <span class="results-emphasis">${state.totalResources}</span> resources.
+    Category: <span class="results-emphasis">${safeCategory}</span>. Search:
+    <span class="results-emphasis">${searchValue}</span>.
+  `;
 }
 
 // Renders all visible resource cards into the dashboard grid.
@@ -125,7 +128,7 @@ function renderResultsMeta(state: DashboardRenderState): void {
     return;
   }
 
-  resultsMetaElement.textContent = createResultsMetaText(state);
+  resultsMetaElement.innerHTML = createResultsMetaMarkup(state);
 }
 
 // Updates category filter aria state so UI selection stays synchronized.
