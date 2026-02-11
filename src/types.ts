@@ -1,8 +1,9 @@
 export enum ResourceCategories {
-  Docs = "Documentation",
-  Tool = "Build Tool",
+  Documentation = "Documentation",
+  BuildTool = "Build Tool",
   Design = "Design",
   Language = "Language",
+  Tool = "Tool",
 }
 
 export interface DevResource {
@@ -19,6 +20,7 @@ export interface PartialDevResource {
 }
 
 export type Resources = DevResource[];
+export type CategoryFilter = "All" | ResourceCategories;
 
 export type SeletorType = "id" | "class" | "tag" | "query" | "queryAll";
 

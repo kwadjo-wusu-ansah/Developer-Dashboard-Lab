@@ -8,52 +8,126 @@
       name="description"
       content="Developer Dashboard for browsing curated resources by category."
     />
+    <link rel="stylesheet" href="/styles/design-system.css" />
     <title>Developer Dashboard</title>
   </head>
   <body>
-    <div id="app">
-      <main aria-labelledby="dashboard-heading">
-        <header>
-          <p>Resource Hub</p>
-          <h1 id="dashboard-heading">Developer Dashboard</h1>
-          <p>Search and filter trusted resources for frontend development.</p>
-        </header>
+    <div id="app" class="dashboard-frame">
+      <main class="dashboard-layout" aria-labelledby="dashboard-heading">
+        <aside class="dashboard-sidebar" aria-label="Sidebar navigation">
+          <div class="brand-block">
+            <p class="brand-mark">DD</p>
+            <h2 class="brand-name">Dev Dashboard</h2>
+          </div>
 
-        <section aria-label="Search and filter controls">
-          <form role="search" aria-label="Search resources">
-            <label for="resource-search">Search by name or category</label>
-            <input
-              id="resource-search"
-              name="resource-search"
-              type="search"
-              placeholder="Try: documentation, design, vite..."
-              autocomplete="off"
-            />
-          </form>
-
-          <nav aria-label="Filter resources by category">
-            <button type="button" data-category="All" aria-pressed="true">
-              All
-            </button>
-            <button type="button" data-category="Documentation">
-              Documentation
-            </button>
-            <button type="button" data-category="Build Tool">Build Tool</button>
-            <button type="button" data-category="Design">Design</button>
-            <button type="button" data-category="Language">Language</button>
-            <button type="button" data-category="Tool">Tool</button>
+          <nav aria-label="Main sections">
+            <ul class="sidebar-list">
+              <li>
+                <button type="button" class="sidebar-button is-active">
+                  Dashboard
+                </button>
+              </li>
+              <li>
+                <button type="button" class="sidebar-button">Resources</button>
+              </li>
+              <li>
+                <button type="button" class="sidebar-button">Bookmarks</button>
+              </li>
+              <li>
+                <button type="button" class="sidebar-button">Activity</button>
+              </li>
+              <li>
+                <button type="button" class="sidebar-button">Settings</button>
+              </li>
+            </ul>
           </nav>
-        </section>
 
-        <section aria-labelledby="resource-list-heading">
-          <h2 id="resource-list-heading">Resources</h2>
-          <p id="results-meta">Resource results will appear below.</p>
-          <ul id="resource-grid" aria-live="polite">
-            <li>
-              Dashboard UI scaffold is ready. Data-driven cards will render from
-              `src/ui.ts`.
-            </li>
-          </ul>
+          <section class="sidebar-support" aria-label="Support panel placeholder">
+            <h3>Workspace Focus</h3>
+            <p>Placeholders only for now. Resource cards will be data-driven.</p>
+            <button type="button">View Guidelines</button>
+          </section>
+        </aside>
+
+        <section class="dashboard-content">
+          <header class="dashboard-header">
+            <div>
+              <p class="header-kicker">Resource Hub</p>
+              <h1 id="dashboard-heading">Developer Dashboard</h1>
+              <p class="header-subtitle">
+                Search and filter trusted resources in a structured workspace.
+              </p>
+            </div>
+            <button type="button" class="header-action">Placeholder Action</button>
+          </header>
+
+          <section class="controls-panel" aria-label="Search and filter controls">
+            <form role="search" aria-label="Search resources">
+              <label for="resource-search">Search by name or category</label>
+              <input
+                id="resource-search"
+                name="resource-search"
+                type="search"
+                placeholder="Try: documentation, design, vite..."
+                autocomplete="off"
+              />
+            </form>
+
+            <nav aria-label="Filter resources by category" class="filter-pills">
+              <button type="button" data-category="All" aria-pressed="true">
+                All
+              </button>
+              <button type="button" data-category="Documentation">
+                Documentation
+              </button>
+              <button type="button" data-category="Build Tool">Build Tool</button>
+              <button type="button" data-category="Design">Design</button>
+              <button type="button" data-category="Language">Language</button>
+              <button type="button" data-category="Tool">Tool</button>
+            </nav>
+          </section>
+
+          <section class="dashboard-grid" aria-label="Main dashboard placeholders">
+            <section class="resources-panel" aria-labelledby="resource-list-heading">
+              <header class="panel-header">
+                <h2 id="resource-list-heading">Resources</h2>
+                <p id="results-meta">Resource cards will render in this grid.</p>
+              </header>
+              <ul id="resource-grid" aria-live="polite" class="resource-placeholder-grid">
+                <li class="resource-placeholder-card">
+                  <h3>Resource Card Placeholder</h3>
+                  <p>Content from `src/ui.ts` appears here.</p>
+                </li>
+                <li class="resource-placeholder-card">
+                  <h3>Resource Card Placeholder</h3>
+                  <p>Category and link actions will be injected later.</p>
+                </li>
+                <li class="resource-placeholder-card">
+                  <h3>Resource Card Placeholder</h3>
+                  <p>Designed to support responsive grid rendering.</p>
+                </li>
+                <li class="resource-placeholder-card">
+                  <h3>Resource Card Placeholder</h3>
+                  <p>Empty-state and search-state will be managed in TS.</p>
+                </li>
+              </ul>
+            </section>
+
+            <aside class="insight-panel" aria-label="Secondary placeholder cards">
+              <article class="insight-card">
+                <h2>Insight Panel</h2>
+                <p>Reserved for upcoming analytics widgets.</p>
+              </article>
+              <article class="insight-card">
+                <h2>System Notes</h2>
+                <p>Use this area for status and recent actions.</p>
+              </article>
+              <article class="insight-card">
+                <h2>Roadmap Block</h2>
+                <p>Feature placeholders align with sample dashboard style.</p>
+              </article>
+            </aside>
+          </section>
         </section>
       </main>
     </div>
