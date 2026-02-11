@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Developer Dashboard for browsing curated resources by category."
+    />
+    <title>Developer Dashboard</title>
+    <script type="module" crossorigin src="/assets/index-D5cvzJ0G.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BUaFHyLg.css">
+  </head>
+  <body class="dashboard-body">
+    <div id="app" class="dashboard-frame">
+      <main class="dashboard-layout" aria-labelledby="dashboard-heading">
+        <section class="dashboard-content">
+          <header class="dashboard-header">
+            <div>
+              <p class="header-kicker">Resource Hub</p>
+              <h1 id="dashboard-heading" class="header-title">
+                Developer Dashboard
+              </h1>
+              <p class="header-subtitle">
+                Search for trusted front-end resources
+              </p>
+            </div>
+          </header>
+
+          <section class="controls-panel" aria-label="Search and filter controls">
+            <form role="search" aria-label="Search resources">
+              <label for="resource-search" class="control-label">
+                Search by name or category
+              </label>
+              <input
+                class="control-input"
+                id="resource-search"
+                name="resource-search"
+                type="search"
+                placeholder="Try: documentation, design, vite..."
+                autocomplete="off"
+              />
+            </form>
+
+            <nav aria-label="Filter resources by category" class="filter-pills">
+              <button
+                type="button"
+                class="filter-pill"
+                data-category="All"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button
+                type="button"
+                class="filter-pill"
+                data-category="Documentation"
+              >
+                Documentation
+              </button>
+              <button type="button" class="filter-pill" data-category="Build Tool">
+                Build Tool
+              </button>
+              <button type="button" class="filter-pill" data-category="Design">
+                Design
+              </button>
+              <button type="button" class="filter-pill" data-category="Language">
+                Language
+              </button>
+              <button type="button" class="filter-pill" data-category="Tool">
+                Tool
+              </button>
+            </nav>
+          </section>
+
+          <section class="dashboard-grid" aria-label="Main dashboard placeholders">
+            <section class="resources-panel" aria-labelledby="resource-list-heading">
+              <header class="panel-header">
+                <h2 id="resource-list-heading" class="panel-title">Resources</h2>
+                <p id="results-meta" class="results-meta">
+                  Resource cards will render in this grid.
+                </p>
+              </header>
+
+              <ul id="resource-grid" aria-live="polite" class="resource-placeholder-grid">
+                <li class="resource-placeholder-card">
+                  <h3 class="resource-placeholder-title">
+                    Resource Card Placeholder
+                  </h3>
+                  <p class="resource-placeholder-copy">
+                    Content from `src/ui.ts` appears here.
+                  </p>
+                </li>
+                <li class="resource-placeholder-card">
+                  <h3 class="resource-placeholder-title">
+                    Resource Card Placeholder
+                  </h3>
+                  <p class="resource-placeholder-copy">
+                    Category and link actions will be injected later.
+                  </p>
+                </li>
+                <li class="resource-placeholder-card">
+                  <h3 class="resource-placeholder-title">
+                    Resource Card Placeholder
+                  </h3>
+                  <p class="resource-placeholder-copy">
+                    Designed to support responsive grid rendering.
+                  </p>
+                </li>
+                <li class="resource-placeholder-card">
+                  <h3 class="resource-placeholder-title">
+                    Resource Card Placeholder
+                  </h3>
+                  <p class="resource-placeholder-copy">
+                    Empty-state and search-state will be managed in TS.
+                  </p>
+                </li>
+              </ul>
+            </section>
+          </section>
+        </section>
+      </main>
+    </div>
+    <noscript>This app requires JavaScript to render the full dashboard.</noscript>
+  </body>
+</html>
