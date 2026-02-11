@@ -31,10 +31,7 @@ body {
   font-family: var(--font-ui);
   color: var(--color-mist-100);
   overflow: hidden;
-  background:
-    radial-gradient(1200px 620px at 5% 5%, rgba(172, 186, 196, 0.14), transparent 58%),
-    radial-gradient(900px 500px at 95% 10%, rgba(216, 216, 196, 0.12), transparent 60%),
-    linear-gradient(155deg, #262d44 0%, #1d2234 100%);
+  background: var(--color-ink-900);
 }
 
 .dashboard-frame {
@@ -48,15 +45,11 @@ body {
   max-width: 1440px;
   display: grid;
   grid-template-columns: 1fr;
-  background: linear-gradient(
-    150deg,
-    rgba(24, 31, 49, 0.92),
-    rgba(20, 26, 41, 0.92)
-  );
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-xl);
+  background: var(--color-ink-900);
+
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--shadow-soft);
+
   animation: rise-fade 480ms ease both;
 }
 
@@ -370,7 +363,7 @@ body {
 
   .dashboard-layout {
     height: 100%;
-    border-radius: 18px;
+    border-radius: 0;
   }
 
   .dashboard-header {
